@@ -1,3 +1,9 @@
+/*
+ *  Ganti nomer WA ke-2 lu sob
+ *  tanpa mengganti @c.us!!
+ */
+const targetNum = "6285179910233@c.us";
+
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
 
@@ -81,11 +87,24 @@ async function processMessageQueue() {
         }
         break;
 
+      case ["aptuh"].includes(body) && message.hasQuotedMsg:
+        await delay(timeer);
+        const quotedMessageIntipSend = await message.getQuotedMessage();
+
+        if (
+          quotedMessageIntipSend &&
+          quotedMessageIntipSend._data.isViewOnce === true
+        ) {
+          await intipMessageSend(quotedMessageIntipSend, targetNum);
+        } else {
+          console.log("Hanya berlaku untuk pesan 1x lihat");
+        }
+        break;
+
       default:
         break;
     }
   }
-  // Proses pesan berikutnya dalam antrian setelah semua pesan selesai diproses
   if (messageQueue.length > 0) {
     await processMessageQueue();
   }
@@ -110,6 +129,29 @@ async function intipMessage(message) {
     message.reply(media, undefined, {
       caption: message.body ? `${message.body}` : null,
     });
+  }
+}
+
+async function intipMessageSend(message, targetNum) {
+  const media = await message.downloadMedia();
+
+  if (["video"].includes(message.type)) {
+    await mediaToMp4(media.data, media.mimetype);
+
+    const output = MessageMedia.fromFilePath("temp/output.mp4");
+
+    await delay(timeer);
+    await client.sendMessage(targetNum, output, {
+      caption: message.body ? `${message.body}` : null,
+    });
+    fs.unlinkSync("temp/output.mp4");
+    console.log("video success send");
+  } else {
+    await delay(timeer);
+    await client.sendMessage(targetNum, media, {
+      caption: message.body ? `${message.body}` : null,
+    });
+    console.log("img success send");
   }
 }
 
