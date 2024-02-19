@@ -2,7 +2,7 @@
  *  Ganti nomer WA ke-2 lu sob
  *  tanpa mengganti @c.us!!
  */
-const targetNum = "6285179910233@c.us";
+const targetNum = "628xxxxxxxxxx@c.us";
 
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");

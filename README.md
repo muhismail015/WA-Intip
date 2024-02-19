@@ -48,7 +48,7 @@
 3. Masuk ke folder project:
 
    ```sh
-   cd wa-intip
+   cd WA-Intip
    ```
 
 4. Install NPM packages:
