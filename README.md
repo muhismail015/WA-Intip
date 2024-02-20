@@ -37,6 +37,8 @@
 
 ### Windows
 
+RDP NOT TESTED !
+
 1. Download & Install [Node.JS](https://nodejs.org/en), kalo udah install lanjut ke next step.
 
 2. Download atau Clone repository ini:
@@ -70,6 +72,8 @@
    ```
 
 6. Tunggu QR-Code muncul, lalu scan pake **no WA utama lu**
+
+7. Setelah muncul **"Client is Ready!"** maka sudah siap digunakan, enjoy.
 
 ### Linux
 

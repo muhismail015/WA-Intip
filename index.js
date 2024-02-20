@@ -1,7 +1,6 @@
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
 
-const ffmpeg = require("fluent-ffmpeg");
 const mime = require("mime-types");
 const fs = require("fs");
 
@@ -12,16 +11,27 @@ const unlinkAsync = util.promisify(fs.unlink);
 const osPlatform = require("os").platform();
 console.log("Running on platform: ", osPlatform);
 
+// FFmpeg
+const ffmpeg = require("fluent-ffmpeg");
+const ffprobe = require("@ffprobe-installer/ffprobe");
+const ffmpegInstaller = require("@ffmpeg-installer/ffmpeg");
+const ffmpegs = require("ffmpeg-static");
+ffmpeg.setFfprobePath(ffprobe.path);
+ffmpeg.setFfmpegPath(ffmpegInstaller.path);
+
 // Puppeter path
 let execPath;
 if (/^win/i.test(osPlatform)) {
+  // Sesuaikan dengan lokasi Chrome terinstall di windows lu
   execPath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 } else if (/^linux/i.test(osPlatform)) {
+  // Sesuaikan path chromium-browser di linux, cek path dengan perintah "which chromium-browser"
   execPath = "/usr/bin/chromium-browser";
 }
 
 const client = new Client({
   authStrategy: new LocalAuth(),
+  ffmpegPath: ffmpegs,
   puppeteer: {
     executablePath: execPath,
   },

@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "ffmpeg-static": "^5.2.0",
     "mime-types": "^2.1.35",
     "nodemon": "^3.0.3",
     "qrcode-terminal": "^0.12.0",
