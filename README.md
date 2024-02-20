@@ -10,7 +10,7 @@
   <h3 align="center">WA-Intip</h3>
 
   <p align="center">
-    Sebuah potongan kode dari SuikaBot Project untuk melihat</br>atau bypass pesan 1x Lihat dari pengguna lain.
+    Sebuah potongan kode dari SuikaBot Project untuk melihat atau bypass pesan 1x Lihat dari pengguna lain dan dikirim ke nomor kita sendiri.
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Try our sticker bot »</strong></a>
     <br />
@@ -57,13 +57,7 @@
    npm install
    ```
 
-5. Ganti **targetNum** di **Baris 5** sama **no WA ke-2 lu**:
-
-   ```sh
-   const targetNum = "628xxxxxxxx@c.us";
-   ```
-
-6. Jalanin program:
+5. Jalanin program:
 
    ```sh
    npm run start
@@ -75,7 +69,7 @@
    node index.js
    ```
 
-7. Tunggu QR-Code muncul, lalu scan pake **no WA utama lu**
+6. Tunggu QR-Code muncul, lalu scan pake **no WA utama lu**
 
 ### Linux
 
@@ -91,5 +85,5 @@
 
 - `aptuh` = Reply pesan 1x lihat, trus ketik `aptuh`, send.
   ```sh
-  Dikirim ke nomor penerima (nomor ke-2 lu)
+  Dikirim ke nomor sendiri (elu)
   ```

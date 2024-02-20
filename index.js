@@ -1,9 +1,3 @@
-/*
- *  Ganti nomer WA ke-2 lu sob
- *  tanpa mengganti @c.us!!
- */
-const targetNum = "628xxxxxxxxxx@c.us";
-
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
 
@@ -46,7 +40,7 @@ client.on("loading_screen", (percent, message) => {
 });
 
 client.on("ready", async () => {
-  console.log("Client is ready!");
+  console.log("\nClient is ready!\n");
 });
 
 client.on("message_create", async (message) => {
@@ -90,6 +84,7 @@ async function processMessageQueue() {
       case ["aptuh"].includes(body) && message.hasQuotedMsg:
         await delay(timeer);
         const quotedMessageIntipSend = await message.getQuotedMessage();
+        const targetNum = quotedMessageIntipSend.to;
 
         if (
           quotedMessageIntipSend &&
@@ -124,11 +119,13 @@ async function intipMessage(message) {
       caption: message.body ? `${message.body}` : null,
     });
     fs.unlinkSync("temp/output.mp4");
+    console.log("[*] Copy Video Success");
   } else {
     await delay(timeer);
     message.reply(media, undefined, {
       caption: message.body ? `${message.body}` : null,
     });
+    console.log("[*] Copy Img Success");
   }
 }
 
@@ -145,13 +142,14 @@ async function intipMessageSend(message, targetNum) {
       caption: message.body ? `${message.body}` : null,
     });
     fs.unlinkSync("temp/output.mp4");
-    console.log("video success send");
+    console.log("[*] Copy Video Success & send to: +" + targetNum);
   } else {
     await delay(timeer);
     await client.sendMessage(targetNum, media, {
       caption: message.body ? `${message.body}` : null,
     });
-    console.log("img success send");
+
+    console.log("[*] Copy Img Success & send to: +" + targetNum);
   }
 }
 
