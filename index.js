@@ -56,11 +56,17 @@ client.on("ready", async () => {
 client.on("message_create", async (message) => {
   try {
     const body = message.body.toLowerCase();
+    const targetNum = message._data.id.fromMe;
 
-    messageQueue.push(message);
+    console.log(targetNum);
 
-    if (!isProcessingQueue) {
-      processMessageQueue();
+    if (targetNum === true) {
+      messageQueue.push(message);
+
+      if (!isProcessingQueue) {
+        processMessageQueue();
+      }
+    } else {
     }
   } catch (error) {
     console.error("Error:", error);
