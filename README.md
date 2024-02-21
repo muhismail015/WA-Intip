@@ -27,17 +27,29 @@
 
 ## About WA-Intip
 
+### [*] Private Chat:
+
 <div align="center">
     <a href="https://github.com/hasyim404/wa-intip/blob/master/temp/screenshoot.png">
     <img style="border-radius: 1%" src="temp/screenshoot.png">
     </a>
 </div>
 
+### [*] Only Admin can send msg in Group:
+
+<div align="center">
+    <a href="https://github.com/hasyim404/wa-intip/blob/master/temp/onlyadmin.png">
+    <img style="border-radius: 1%" src="temp/onlyadmin.png">
+    </a>
+</div>
+
 ## How to Run
 
-### Windows
+### <ins> Windows </ins>
 
-RDP NOT TESTED !
+**Note:** RDP belum tested !! </br>
+
+<!-- **Note:** Kalo error coba ganti path **../chrome.exe** nya lalu sesuaikan sama punya lu. -->
 
 1. Download & Install [Node.JS](https://nodejs.org/en), kalo udah install lanjut ke next step.
 
@@ -75,9 +87,69 @@ RDP NOT TESTED !
 
 7. Setelah muncul **"Client is Ready!"** maka sudah siap digunakan, enjoy.
 
-### Linux
+### <ins>Linux</ins>
 
-- _Coming soon_
+**Note:** VPS belum tested !! </br>
+
+<!-- - _Coming soon_ -->
+
+1. Install Curl
+
+   ```sh
+   sudo apt-get install curl
+   ```
+
+2. Download NodeJS (v20.x)
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   ```
+
+3. Install NodeJS & NPM
+
+   ```sh
+   sudo apt-get install nodejs
+   ```
+
+4. Install Chromium-Browser
+
+   ```sh
+   sudo apt-get install chromium-browser
+   ```
+
+5. Download atau Clone repository ini:
+
+   ```sh
+   git clone https://github.com/hasyim404/wa-intip.git
+   ```
+
+6. Masuk ke folder project:
+
+   ```sh
+   cd WA-Intip
+   ```
+
+7. Install NPM packages:
+
+   ```sh
+   npm install
+   ```
+
+8. Jalanin program:
+
+   ```sh
+   npm run start
+   ```
+
+   atau:
+
+   ```sh
+   node index.js
+   ```
+
+9. Tunggu QR-Code muncul, lalu scan pake **no WA utama lu**
+
+10. Setelah muncul **"Client is Ready!"** maka sudah siap digunakan, enjoy.
 
 ## Available Commands
 
