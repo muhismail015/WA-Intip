@@ -58,8 +58,6 @@ client.on("message_create", async (message) => {
     const body = message.body.toLowerCase();
     const targetNum = message._data.id.fromMe;
 
-    console.log(targetNum);
-
     if (targetNum === true) {
       messageQueue.push(message);
 
