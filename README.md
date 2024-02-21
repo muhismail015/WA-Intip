@@ -30,16 +30,16 @@
 ### [*] Private Chat:
 
 <div align="center">
-    <a href="https://github.com/hasyim404/wa-intip/blob/master/temp/screenshoot.png">
-    <img style="border-radius: 1%" src="temp/screenshoot.png">
+    <a href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/private-msg.png">
+    <img style="border-radius: 1%" src="assets/img/private-msg.png">
     </a>
 </div>
 
 ### [*] Only Admin can send msg in Group:
 
 <div align="center">
-    <a href="https://github.com/hasyim404/wa-intip/blob/master/temp/onlyadmin.png">
-    <img style="border-radius: 1%" src="temp/onlyadmin.png">
+    <a href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/only-admin-can-send-msg-group.png">
+    <img style="border-radius: 1%" src="assets/img/only-admin-can-send-msg-group.png">
     </a>
 </div>
 
