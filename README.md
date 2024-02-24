@@ -12,7 +12,7 @@
   <p align="center">
     Sebuah potongan kode dari SuikaBot Project untuk melihat atau bypass pesan 1x Lihat dari pengguna lain dan dikirim ke nomor kita sendiri.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Try our sticker bot »</strong></a>
+    <a href="https://wa.me/6285179910233"><strong>Try our sticker bot »</strong></a>
     <br />
     <br />
     Terimakasih kepada:
