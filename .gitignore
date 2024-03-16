@@ -4,3 +4,6 @@
 test.js
 /temp/output.mp4
 /temp/input.mp4
+app.log
+/save-media/vid/*
+/save-media/img/*
