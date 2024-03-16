@@ -151,6 +151,44 @@
 
 10. Setelah muncul **"Client is Ready!"** maka sudah siap digunakan, enjoy.
 
+### <ins>With PM2</ins>
+
+**Note:** VPS belum tested !! </br>
+
+1. Install PM2 ( _global_ ) :
+
+   ```sh
+   sudo npm install pm2 -g
+   ```
+
+2. Ke folder \_**WA-Intip**, abis itu ketik :
+
+   ```sh
+   pm2 start index.js
+   ```
+
+3. Enable PM2 startup :
+
+   ```sh
+   pm2 startup
+   ```
+
+   akan ada output seperti ini, Copy :
+
+   ```sh
+   sudo env PATH=$PATH:/usr/local/bin ......... dst.
+   ```
+
+4. Paste, Lalu enter ( jalankan )
+5. Finishing
+   ```sh
+   pm2 list
+   ```
+   ```sh
+   pm2 save
+   ```
+6. Done
+
 ## Available Commands
 
 - `.intip` = Reply pesan 1x lihat, trus ketik `.intip`, send.
