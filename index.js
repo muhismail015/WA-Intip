@@ -47,8 +47,6 @@ const client = new Client({
       "--no-zygote",
       '--disable-dev-shm-usage'
   ],
-  webVersion: '2.2412.50',
-  webVersionCache:  { type: "local" }
   },
 });
 
