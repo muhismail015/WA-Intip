@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/hasyim404/wa-intip/blob/master/temp/suika.png">
+  <a target="_blank"  href="https://github.com/hasyim404/wa-intip/blob/master/temp/suika.png">
     <img style="border-radius: 50%;" src="temp/suika.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -12,14 +12,14 @@
   <p align="center">
     Sebuah potongan kode dari SuikaBot Project untuk melihat atau bypass pesan 1x Lihat dari pengguna lain dan dikirim ke nomor kita sendiri.
     <br />
-    <a href="https://wa.me/6285179910233"><strong>Try our sticker bot »</strong></a>
+    <a target="_blank" href="https://suika.pw/"><strong>Try our sticker bot »</strong></a>
     <br />
     <br />
     Terimakasih kepada:
     <br />
-    <a href="https://github.com/xhaeffer">@xhaeffer</a>
+    <a target="_blank" href="https://github.com/xhaeffer">@xhaeffer</a>
     ·
-    <a href="https://github.com/iegl3">@iegl3 </a>
+    <a target="_blank" href="https://github.com/iegl3">@iegl3 </a>
   </p>
 </div>
 
@@ -30,7 +30,7 @@
 ### [*] Private Chat:
 
 <div align="center">
-    <a href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/private-msg.png">
+    <a target="_blank"  href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/private-msg.png">
     <img style="border-radius: 1%" src="assets/img/private-msg.png">
     </a>
 </div>
@@ -38,7 +38,7 @@
 ### [*] Only Admin can send msg in Group:
 
 <div align="center">
-    <a href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/only-admin-can-send-msg-group.png">
+    <a target="_blank"  href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/only-admin-can-send-msg-group.png">
     <img style="border-radius: 1%" src="assets/img/only-admin-can-send-msg-group.png">
     </a>
 </div>
