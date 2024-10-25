@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a target="_blank"  href="https://github.com/hasyim404/wa-intip/blob/master/temp/suika.png">
+  <a target="_blank"  href="https://github.com/muhismail015/wa-intip/blob/master/temp/suika.png">
     <img style="border-radius: 50%;" src="temp/suika.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -30,7 +30,7 @@
 ### [*] Private Chat:
 
 <div align="center">
-    <a target="_blank"  href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/private-msg.png">
+    <a target="_blank"  href="https://github.com/muhismail015/wa-intip/blob/master/assets/img/private-msg.png">
     <img style="border-radius: 1%" src="assets/img/private-msg.png">
     </a>
 </div>
@@ -38,7 +38,7 @@
 ### [*] Only Admin can send msg in Group:
 
 <div align="center">
-    <a target="_blank"  href="https://github.com/hasyim404/wa-intip/blob/master/assets/img/only-admin-can-send-msg-group.png">
+    <a target="_blank"  href="https://github.com/muhismail015/wa-intip/blob/master/assets/img/only-admin-can-send-msg-group.png">
     <img style="border-radius: 1%" src="assets/img/only-admin-can-send-msg-group.png">
     </a>
 </div>
@@ -49,14 +49,14 @@
 
 **Note:** RDP belum tested !! </br>
 
-<!-- **Note:** Kalo error coba ganti path **../chrome.exe** nya lalu sesuaikan sama punya lu. -->
+**Note 2:** Kalo error coba ganti path **../chrome.exe** nya lalu sesuaikan sama punya lu.
 
 1. Download & Install [Node.JS](https://nodejs.org/en), kalo udah install lanjut ke next step.
 
 2. Download atau Clone repository ini:
 
    ```sh
-   git clone https://github.com/hasyim404/wa-intip.git
+   git clone https://github.com/muhismail015/wa-intip.git
    ```
 
 3. Masuk ke folder project:
@@ -89,7 +89,7 @@
 
 ### <ins>Linux</ins>
 
-**Note:** VPS belum tested !! </br>
+**Note:** Tested in VPS (Azure, GCP) with OS Ubuntu 20.x </br>
 
 <!-- - _Coming soon_ -->
 
@@ -120,7 +120,7 @@
 5. Download atau Clone repository ini:
 
    ```sh
-   git clone https://github.com/hasyim404/wa-intip.git
+   git clone https://github.com/muhismail015/wa-intip.git
    ```
 
 6. Masuk ke folder project:
@@ -153,15 +153,13 @@
 
 ### <ins>With PM2</ins>
 
-**Note:** VPS belum tested !! </br>
-
 1. Install PM2 ( _global_ ) :
 
    ```sh
    sudo npm install pm2 -g
    ```
 
-2. Ke folder \_**WA-Intip**, abis itu ketik :
+2. Ke folder **WA-Intip**, abis itu ketik :
 
    ```sh
    pm2 start index.js
