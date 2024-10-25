@@ -9,7 +9,7 @@ const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 const unlinkAsync = util.promisify(fs.unlink);
 
-setupLogging()
+setupLogging();
 
 const osPlatform = require("os").platform();
 console.log("Running on platform: ", osPlatform);
@@ -41,12 +41,12 @@ const client = new Client({
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-extensions",
-      '--disable-gpu', 
+      "--disable-gpu",
       "--disable-accelerated-2d-canvas",
       "--no-first-run",
       "--no-zygote",
-      '--disable-dev-shm-usage'
-  ],
+      "--disable-dev-shm-usage",
+    ],
   },
 });
 
@@ -89,18 +89,18 @@ client.initialize();
 async function processMessageQueue() {
   try {
     isProcessingQueue = true;
-  
+
     while (messageQueue.length > 0) {
       const message = messageQueue.shift();
       const body = message.body.toLowerCase();
-  
+
       switch (true) {
         case [".intip"].includes(body) && message.type === "chat":
           await delay(timeer);
 
           if (message.hasQuotedMsg) {
             const quotedMessageIntip = await message.getQuotedMessage();
-            
+
             if (
               quotedMessageIntip &&
               quotedMessageIntip._data.isViewOnce === true
@@ -110,16 +110,16 @@ async function processMessageQueue() {
               console.log("Hanya berlaku untuk pesan 1x lihat");
             }
           }
-  
+
           break;
-  
+
         case ["aptuh"].includes(body) && message.type === "chat":
           await delay(timeer);
 
           if (message.hasQuotedMsg) {
             const quotedMessageIntipSend = await message.getQuotedMessage();
-            const targetNum = quotedMessageIntipSend.to;
-            
+            const targetNum = quotedMessageIntipSend.author;
+
             if (
               quotedMessageIntipSend &&
               quotedMessageIntipSend._data.isViewOnce === true
@@ -130,7 +130,7 @@ async function processMessageQueue() {
             }
           }
           break;
-  
+
         default:
           break;
       }
@@ -140,7 +140,7 @@ async function processMessageQueue() {
     }
     isProcessingQueue = false;
   } catch (error) {
-    console.error("Error: ", error)
+    console.error("Error: ", error);
   }
 }
 
@@ -148,25 +148,26 @@ async function intipMessage(message) {
   try {
     const media = await message.downloadMedia();
     const timestamp = Date.now();
-  
+
     if (["video"].includes(message.type)) {
       await mediaToMp4(media.data, media.mimetype);
-  
+
       const output = MessageMedia.fromFilePath("temp/output.mp4");
-  
+
       await delay(timeer);
       await message.reply(output, undefined, {
         caption: message.body ? `${message.body}` : null,
       });
 
       // Save to local
-      fs.writeFileSync(`save-media/vid/${timestamp}.mp4`, output.data, { encoding: 'base64' });
+      fs.writeFileSync(`save-media/vid/${timestamp}.mp4`, output.data, {
+        encoding: "base64",
+      });
 
       console.log("Copy & Save Video Success");
 
       // Delete temp file
       fs.unlinkSync("temp/output.mp4");
-
     } else {
       await delay(timeer);
       await message.reply(media, undefined, {
@@ -174,13 +175,14 @@ async function intipMessage(message) {
       });
 
       // Save to local
-      fs.writeFileSync(`save-media/img/${timestamp}.jpg`, media.data, { encoding: 'base64' });
+      fs.writeFileSync(`save-media/img/${timestamp}.png`, media.data, {
+        encoding: "base64",
+      });
 
       console.log("Copy & Save Img Success");
-
     }
   } catch (error) {
-    console.error("Error: ", error)
+    console.error("Error: ", error);
   }
 }
 
@@ -188,15 +190,17 @@ async function intipMessageSend(message, targetNum) {
   try {
     const media = await message.downloadMedia();
     const timestamp = Date.now();
-  
+
     if (["video"].includes(message.type)) {
       await mediaToMp4(media.data, media.mimetype);
-  
+
       const output = MessageMedia.fromFilePath("temp/output.mp4");
-      
+
       // Save to local
-      fs.writeFileSync(`save-media/vid/${timestamp}.mp4`, output.data, { encoding: 'base64' });
-  
+      fs.writeFileSync(`save-media/vid/${timestamp}.mp4`, output.data, {
+        encoding: "base64",
+      });
+
       await delay(timeer);
       await client.sendMessage(targetNum, output, {
         caption: message.body ? `${message.body}` : null,
@@ -208,17 +212,19 @@ async function intipMessageSend(message, targetNum) {
       fs.unlinkSync("temp/output.mp4");
     } else {
       // Save to local
-      fs.writeFileSync(`save-media/img/${timestamp}.jpg`, media.data, { encoding: 'base64' });
+      fs.writeFileSync(`save-media/img/${timestamp}.png`, media.data, {
+        encoding: "base64",
+      });
 
       await delay(timeer);
       await client.sendMessage(targetNum, media, {
         caption: message.body ? `${message.body}` : null,
       });
-  
+
       console.log("Save Img Success & Send to: +" + targetNum);
     }
   } catch (error) {
-    console.error("Error: ".error)
+    console.error("Error: ".error);
   }
 }
 
@@ -263,8 +269,16 @@ function setupLogging() {
   function getCurrentTimestamp() {
     // Date Format
     const currDate = new Date();
-    const date = currDate.toLocaleString('id-ID', { year: 'numeric', month: '2-digit', day: '2-digit' });
-    const time = currDate.toLocaleString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const date = currDate.toLocaleString("id-ID", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    const time = currDate.toLocaleString("id-ID", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
 
     return date + "-" + time;
   }
@@ -288,14 +302,20 @@ function setupLogging() {
   // Mengalihkan console.log dan console.error
   console.log = function () {
     const timestamp = getCurrentTimestamp();
-    const logMessage = `[#] [${timestamp}] ${util.format.apply(null, arguments)}\n`;
+    const logMessage = `[#] [${timestamp}] ${util.format.apply(
+      null,
+      arguments
+    )}\n`;
     logStream.write(logMessage);
     originalStdoutWrite.call(process.stdout, logMessage);
   };
 
   console.error = function () {
     const timestamp = getCurrentTimestamp();
-    const logMessage = `[!] [${timestamp}] ${util.format.apply(null, arguments)}\n`;
+    const logMessage = `[!] [${timestamp}] ${util.format.apply(
+      null,
+      arguments
+    )}\n`;
     logStream.write(logMessage);
     originalStderrWrite.call(process.stderr, logMessage);
   };
